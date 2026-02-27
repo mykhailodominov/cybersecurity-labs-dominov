@@ -1,0 +1,4 @@
+String query = "SELECT * FROM products WHERE category = ?";
+PreparedStatement statement = connection.prepareStatement(query);
+statement.setString(1, input);
+ResultSet rs = statement.executeQuery();
