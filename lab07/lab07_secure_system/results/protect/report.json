@@ -1,0 +1,45 @@
+{
+  "generated_at_local": "2026-03-01T21:23:54",
+  "mode": "protect",
+  "original_file": "CV_Mykhailo_Dominov.pdf",
+  "carrier_image": "big_image.png",
+  "protected_image": "protected.png",
+  "integrity": {
+    "sha256_before": "baec5c9f8f2395560c6488f39caa1e8a01fb204502e584a2d4ac3ea14e352a30",
+    "sha256_after": null,
+    "status": "N/A (protect only)"
+  },
+  "metrics": [
+    {
+      "operation": "encrypt_file_fernet",
+      "input_path": "CV_Mykhailo_Dominov.pdf",
+      "output_path": "results\\protect\\ciphertext.bin",
+      "input_size_bytes": 284281,
+      "output_size_bytes": 379128,
+      "size_change_percent": 33.36381960102856,
+      "duration_seconds": 0.002763899974524975,
+      "extra": {
+        "key_derivation": "SHA-256(personal_seed) -> urlsafe_base64",
+        "ciphertext_sha256": "7d72b32f90bd1f169cd3a57ee84a2c0961c6ea13d9b03f3e52556a0f685ad31f"
+      }
+    },
+    {
+      "operation": "lsb_hide_ciphertext_in_image",
+      "input_path": "big_image.png",
+      "output_path": "protected.png",
+      "input_size_bytes": 8591,
+      "output_size_bytes": 673285,
+      "size_change_percent": 7737.096961936911,
+      "duration_seconds": 0.7725132999476045,
+      "extra": {
+        "payload_bytes": 379128,
+        "capacity_bytes": 777560,
+        "used_total_bytes_in_stream": 379168
+      }
+    }
+  ],
+  "notes": {
+    "both_stages_required": "Після LSB-вилучення отримуються зашифровані байти (Fernet token). Без правильного personal_seed файл відновити неможливо.",
+    "key_hint_base64_of_key": "MkREUlNzb1d4TTVOMjdsQ01WSVZtdGxuMlNpVUhuUS0yS2pGdUNJT2pxcz0="
+  }
+}

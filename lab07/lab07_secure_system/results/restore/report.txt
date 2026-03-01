@@ -1,0 +1,26 @@
+ЗВІТ: Двоетапний захист з аналітикою (ЛР №7)
+
+Дата/час (локально): 2026-03-01T21:32:08
+Оригінальний файл: None
+Контейнер-зображення: None
+Результуюче зображення: protected.png
+
+Перевірка цілісності:
+ - SHA-256 оригіналу (до):  None
+ - SHA-256 оригіналу (після): baec5c9f8f2395560c6488f39caa1e8a01fb204502e584a2d4ac3ea14e352a30
+ - Результат: OK (file restored)
+
+Метрики операцій:
+ * lsb_extract_ciphertext_from_image: 0.544542 c
+   - input:  673285 bytes (protected.png)
+   - output: 379128 bytes (results\restore\ciphertext_extracted.bin)
+   - size Δ: -43.69%
+   - extra: {'ciphertext_sha256': '7d72b32f90bd1f169cd3a57ee84a2c0961c6ea13d9b03f3e52556a0f685ad31f'}
+
+ * decrypt_file_fernet: 0.002671 c
+   - input:  379128 bytes (results\restore\ciphertext_extracted.bin)
+   - output: 284281 bytes (restored_CV.pdf)
+   - size Δ: -25.02%
+   - extra: {'status': 'success'}
+
+Примітка: для доступу до даних потрібні обидва етапи: вилучення з LSB + дешифрування.

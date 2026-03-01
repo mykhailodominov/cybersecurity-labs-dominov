@@ -1,0 +1,40 @@
+{
+  "generated_at_local": "2026-03-01T21:32:08",
+  "mode": "restore",
+  "protected_image": "protected.png",
+  "restored_file": "restored_CV.pdf",
+  "integrity": {
+    "sha256_before": null,
+    "sha256_after": "baec5c9f8f2395560c6488f39caa1e8a01fb204502e584a2d4ac3ea14e352a30",
+    "status": "OK (file restored)"
+  },
+  "metrics": [
+    {
+      "operation": "lsb_extract_ciphertext_from_image",
+      "input_path": "protected.png",
+      "output_path": "results\\restore\\ciphertext_extracted.bin",
+      "input_size_bytes": 673285,
+      "output_size_bytes": 379128,
+      "size_change_percent": -43.689819318713475,
+      "duration_seconds": 0.5445421999320388,
+      "extra": {
+        "ciphertext_sha256": "7d72b32f90bd1f169cd3a57ee84a2c0961c6ea13d9b03f3e52556a0f685ad31f"
+      }
+    },
+    {
+      "operation": "decrypt_file_fernet",
+      "input_path": "results\\restore\\ciphertext_extracted.bin",
+      "output_path": "restored_CV.pdf",
+      "input_size_bytes": 379128,
+      "output_size_bytes": 284281,
+      "size_change_percent": -25.017144605515817,
+      "duration_seconds": 0.002671399968676269,
+      "extra": {
+        "status": "success"
+      }
+    }
+  ],
+  "notes": {
+    "both_stages_required": "Без етапу LSB-вилучення немає ciphertext. Без етапу дешифрування ciphertext не перетвориться на файл."
+  }
+}

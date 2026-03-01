@@ -1,0 +1,26 @@
+ЗВІТ: Двоетапний захист з аналітикою (ЛР №7)
+
+Дата/час (локально): 2026-03-01T21:30:17
+Оригінальний файл: None
+Контейнер-зображення: None
+Результуюче зображення: protected.png
+
+Перевірка цілісності:
+ - SHA-256 оригіналу (до):  None
+ - SHA-256 оригіналу (після): None
+ - Результат: FAILED (wrong key or corrupted data)
+
+Метрики операцій:
+ * lsb_extract_ciphertext_from_image: 0.537389 c
+   - input:  673285 bytes (protected.png)
+   - output: 379128 bytes (results\restore_wrong\ciphertext_extracted.bin)
+   - size Δ: -43.69%
+   - extra: {'ciphertext_sha256': '7d72b32f90bd1f169cd3a57ee84a2c0961c6ea13d9b03f3e52556a0f685ad31f'}
+
+ * decrypt_file_fernet: 0.011211 c
+   - input:  379128 bytes (results\restore_wrong\ciphertext_extracted.bin)
+   - output: 0 bytes (restored_wrong.pdf)
+   - size Δ: -100.00%
+   - extra: {'status': 'failed', 'error': 'InvalidToken: неправильний ключ або пошкоджені дані.'}
+
+Примітка: для доступу до даних потрібні обидва етапи: вилучення з LSB + дешифрування.

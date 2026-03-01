@@ -1,0 +1,26 @@
+ЗВІТ: Двоетапний захист з аналітикою (ЛР №7)
+
+Дата/час (локально): 2026-03-01T21:23:54
+Оригінальний файл: CV_Mykhailo_Dominov.pdf
+Контейнер-зображення: big_image.png
+Результуюче зображення: protected.png
+
+Перевірка цілісності:
+ - SHA-256 оригіналу (до):  baec5c9f8f2395560c6488f39caa1e8a01fb204502e584a2d4ac3ea14e352a30
+ - SHA-256 оригіналу (після): None
+ - Результат: N/A (protect only)
+
+Метрики операцій:
+ * encrypt_file_fernet: 0.002764 c
+   - input:  284281 bytes (CV_Mykhailo_Dominov.pdf)
+   - output: 379128 bytes (results\protect\ciphertext.bin)
+   - size Δ: 33.36%
+   - extra: {'key_derivation': 'SHA-256(personal_seed) -> urlsafe_base64', 'ciphertext_sha256': '7d72b32f90bd1f169cd3a57ee84a2c0961c6ea13d9b03f3e52556a0f685ad31f'}
+
+ * lsb_hide_ciphertext_in_image: 0.772513 c
+   - input:  8591 bytes (big_image.png)
+   - output: 673285 bytes (protected.png)
+   - size Δ: 7737.10%
+   - extra: {'payload_bytes': 379128, 'capacity_bytes': 777560, 'used_total_bytes_in_stream': 379168}
+
+Примітка: для доступу до даних потрібні обидва етапи: вилучення з LSB + дешифрування.
